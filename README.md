@@ -2,6 +2,7 @@
 Cisco networking project
 
 **CISCO NETWORK SIMULATION PROJECT**
+
 This project required design a network for typical company that computers to communicate with each other and on the internet.It focuses on using IPv6 addressing, subnet-based network segmentation and ensure network security to prevent unauthorized access and misuse between different departments.
 
 --- NETWORK STRUCTURE ---
