@@ -41,7 +41,9 @@ topology.png -> Network topology diagram
 
 
 --- CONFIGURATION ---
+
 Key Configuration Files
+
 - router-config.txt -> Router configuration
 - dhcp-config.txt -> DHCP configuration
 
