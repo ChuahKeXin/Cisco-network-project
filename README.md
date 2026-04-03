@@ -34,6 +34,7 @@ The network is divided into several departments:
 
 
 --- PROJECT FILES ---
+
 project.pkt -> Cisco Packet Tracer file
 topology.png -> Network topology diagram
 
