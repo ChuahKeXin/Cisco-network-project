@@ -1,0 +1,127 @@
+##DHCP configuration
+
+  INTERNAL ROUTER DHCPV6 COMMANDS
+**System administrator office and server room (Subnet 60)**
+interface gigabitEthernet 0/1
+ no shutdown
+ ipv6 address 2026:BB23:22CD:60::1/64
+ exit
+
+ipv6 dhcp pool SERVER_ADMIN_POOL
+ address prefix 2026:BB23:22CD:60::/64
+ dns-server 2026:BB23:22CD:60::10
+ exit
+
+interface gigabitEthernet 0/1
+ ipv6 dhcp server SERVER_ADMIN_POOL
+ exit
+   
+
+**Wireless Network DHCP (Subnet 70)**
+interface gigabitEthernet 0/0
+ no shutdown
+ exit
+
+ipv6 dhcp pool WIFI_POOL
+ address prefix 2026:BB23:22CD:70::/64
+ dns-server 2026:BB23:22CD:60::10
+ exit
+
+interface gigabitEthernet 0/0
+ ipv6 dhcp server WIFI_POOL
+ exit
+
+**Administration Office DHCP (Subnet 40)**
+interface gigabitEthernet 0/2
+ no shutdown
+ ipv6 address 2026:BB23:22CD:40::1/64
+ exit
+
+ipv6 dhcp pool ADMIN_POOL
+ address prefix 2026:BB23:22CD:40::/64
+ dns-server 2026:BB23:22CD:60::10
+ exit
+
+interface gigabitEthernet 0/2
+ ipv6 dhcp server ADMIN_POOL
+ exit
+
+**Enable DHCPv6**
+interface gigabitEthernet0/2
+ ipv6 nd other-config-flag
+ ipv6 dhcp server ADMIN_POOL
+ exit
+
+interface gigabitEthernet0/0
+ ipv6 nd other-config-flag
+ ipv6 dhcp server WIFI_POOL
+ exit
+
+
+CORE ROUTER DHCPV6 COMMANDS
+**LAB 1(Subnet 10)**
+interface gigabitEthernet 0/0
+ no shutdown
+ ipv6 address 2026:BB23:22CD:10::1/64
+ exit
+
+ipv6 dhcp pool LAB1_POOL
+ address prefix 2026:BB23:22CD:10::/64
+ dns-server 2026:BB23:22CD:60::10
+ exit
+
+interface gigabitEthernet 0/0
+ ipv6 dhcp server LAB1_POOL
+ ipv6 nd other-config-flag
+ exit
+
+**LAB 2 (Subnet 20)**
+interface gigabitEthernet 0/1
+ no shutdown
+ ipv6 address 2026:BB23:22CD:20::1/64
+ exit
+
+ipv6 dhcp pool LAB2_POOL
+ address prefix 2026:BB23:22CD:20::/64
+ dns-server 2026:BB23:22CD:60::10
+ exit
+
+interface gigabitEthernet 0/1
+ ipv6 dhcp server LAB2_POOL
+ ipv6 nd other-config-flag
+ exit
+
+**CLASS(Subnet 30)**
+interface gigabitEthernet 0/2
+ no shutdown
+ ipv6 address 2026:BB23:22CD:30::1/64
+ exit
+
+ipv6 dhcp pool CLASS_POOL
+ address prefix 2026:BB23:22CD:30::/64
+ dns-server 2026:BB23:22CD:60::10
+ exit
+
+interface gigabitEthernet 0/2
+ ipv6 dhcp server CLASS_POOL
+ ipv6 nd other-config-flag
+ exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
