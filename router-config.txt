@@ -1,8 +1,7 @@
 ## Router config
 
 
--- Core Router --
-
+**Core Router**
 hostname CORE-ROUTER
 ipv6 unicast-routing
 
@@ -17,15 +16,14 @@ interface g0/1
  no shutdown
 
 
--- Access Control(Security) --
+**Access Control(Security)**
 ipv6 access-list NO_WEB_TO_INTERNET
  permit icmp any any
  deny tcp any any eq www
  deny tcp any any eq 443
  permit ipv6 any any
 
--- Internal Router --
-
+**Internal Router**
 hostname INTERNAL-ROUTER
 ipv6 unicast-routing
 
@@ -35,8 +33,7 @@ interface g0/0
  no shutdown
 
 
--- ISP Router --
-
+**ISP Router**
 hostname ISP-ROUTER
 ipv6 unicast-routing
 
